@@ -1,0 +1,564 @@
+E:/UE Projects/FirstPerson 5.5/Saved/RenderDocCaptures/2025.01.30-19.40.22_capture_5.rdc - Frame #4294967295
+
+ EID  | Event                                                                                                                                             | Action #
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+19    | - RayTracingGeometry                                                                                                                              |       
+68    | - FRDGBuilder::Execute                                                                                                                            | 1-238 
+187   |  \- ClearGPUMessageBuffer                                                                                                                         | 1-3   
+190   |    \- Dispatch(1, 1, 1)                                                                                                                           | 1     
+193   |     - ClearUnorderedAccessViewUint({ UINT32_MAX, UINT32_MAX, UINT32_MAX, UINT32_MAX })                                                            | 2     
+195   |     - ClearUnorderedAccessViewUint({ 1, 1, 1, 1 })                                                                                                | 3     
+197   |   - UpdateDistanceFieldAtlas                                                                                                                      | 4-7   
+198   |    \- ClearBuffer(DistanceFields.DistanceFieldAssetWantedNumMips Size=16bytes)                                                                    |       
+200   |     - ComputeWantedMips                                                                                                                           | 4-5   
+208   |      \- Dispatch(2, 1, 1)                                                                                                                         | 4     
+213   |     - GenerateStreamingRequests                                                                                                                   | 5-6   
+220   |      \- Dispatch(1, 1, 1)                                                                                                                         | 5     
+224   |     - DistanceFieldAssetReadback                                                                                                                  | 6-7   
+225   |      \- CopySubresourceRegion(Buffer 19710, DistanceFields.DistanceFieldStreamingRequests)                                                        | 6     
+232   |   - Scene                                                                                                                                         | 7-237 
+233   |    \- AccessModePass[Graphics] (Textures: 0, Buffers: 1)                                                                                          |       
+235   |     - FXSystemPreRender                                                                                                                           |       
+236   |      \- GPUParticles_PreRender                                                                                                                    |       
+239   |     - NiagaraUpdateDrawIndirectBuffers                                                                                                            | 7-8   
+249   |      \- Dispatch(1, 1, 1)                                                                                                                         | 7     
+255   |     - GPUSceneUpdate                                                                                                                              | 8-14  
+256   |      \- GPUScene.UploadDynamicPrimitiveShaderDataForView                                                                                          | 8-12  
+257   |        \- GPUScene::SetInstancePrimitiveIdCS                                                                                                      | 8-9   
+263   |          \- Dispatch(1, 1, 1)                                                                                                                     | 8     
+267   |         - UpdateGPUScene NumPrimitiveDataUploads 2                                                                                                | 9-12  
+268   |          \- ScatterUpload[0] (Resource: GPUScene.PrimitiveData, Offset: 0)                                                                        | 9-10  
+274   |            \- Dispatch(2, 1, 1)                                                                                                                   | 9     
+278   |           - ScatterUpload[0] (Resource: GPUScene.InstanceSceneData, Offset: 0, GroupSize: 1)                                                      | 10-11 
+284   |            \- Dispatch(1, 1, 1)                                                                                                                   | 10    
+288   |             - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                        | 11    
+292   |       - BuildRenderingCommandsDeferred(Culling=On)                                                                                                | 12-14 
+293   |        \- ClearBuffer(InstanceCulling.Compaction.BlockInstanceCounts Size=4bytes)                                                                 |       
+295   |         - ClearIndirectArgInstanceCount                                                                                                           | 12-13 
+299   |          \- Dispatch(1, 1, 1)                                                                                                                     | 12    
+303   |         - CullInstances(UnCulled). Bin 0                                                                                                          | 13-14 
+324   |          \- Dispatch(4, 1, 1)                                                                                                                     | 13    
+334   |         - CullInstances(Generic). Bin 1                                                                                                           |       
+336   |         - Instance Compaction Phase 1                                                                                                             |       
+338   |         - Instance Compaction Phase 2                                                                                                             |       
+342   |     - VirtualHeightfieldMesh                                                                                                                      | 14-20 
+343   |      \- InitInstanceBuffer                                                                                                                        | 14-15 
+348   |        \- Dispatch(1, 1, 1)                                                                                                                       | 14    
+352   |       - InitBuffers                                                                                                                               | 15-17 
+356   |        \- Dispatch(256, 1, 1)                                                                                                                     | 15    
+365   |         - Dispatch(1, 1, 1)                                                                                                                       | 16    
+372   |       - CollectQuads                                                                                                                              | 17-18 
+385   |        \- Dispatch(16, 1, 1)                                                                                                                      | 17    
+393   |       - VirtualTextureFeedbackCopy                                                                                                                | 18-19 
+394   |        \- CopySubresourceRegion(Buffer 3408, VirtualHeightfieldMesh.FeedbackBuffer)                                                               | 18    
+397   |       - CullInstances                                                                                                                             | 19-20 
+405   |        \- DispatchIndirect(<1, 1, 1>)                                                                                                             | 19    
+412   |     - AccessModePass[Graphics] (Textures: 6, Buffers: 3)                                                                                          |       
+414   |     - ClearDepthStencil (SceneDepthZ)                                                                                                             | 20-21 
+418   |      \- ClearDepthStencilView(0.00, 0)                                                                                                            | 20    
+422   |     - PrePass DDM_AllOpaqueNoVelocity (Forced by DBuffer)                                                                                         | 21-26 
+423   |      \- DepthPassParallel                                                                                                                         | 21-26 
+428   |        \- ParallelDraw (Index: 0, Num: 1)                                                                                                         | 21-26 
+429   |          \- /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial Sphere (12 instances)                                                     |       
+444   |            \- DrawIndexedInstanced(2880, 12)                                                                                                      | 21    
+446   |           - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Cube (6 instances)                                                     |       
+450   |            \- DrawIndexedInstanced(36, 6)                                                                                                         | 22    
+452   |           - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_QuarterCylinder (2 instances)                                          |       
+456   |            \- DrawIndexedInstanced(108, 2)                                                                                                        | 23    
+458   |           - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Ramp (3 instances)                                                     |       
+462   |            \- DrawIndexedInstanced(24, 3)                                                                                                         | 24    
+464   |           - /Game/SnowField/M_InteractiveSnow.M_InteractiveSnow VirtualHeightfieldMesh (1 instances)                                              |       
+482   |            \- DrawIndexedInstancedIndirect(<393216, 23>)                                                                                          | 25    
+487   |       - EditorPrimitives                                                                                                                          |       
+498   |     - RenderVelocities                                                                                                                            | 26-29 
+499   |      \- ClearRenderTarget(SceneVelocity, slice 0, mip 0) 1488x708 ClearAction                                                                     | 26-27 
+503   |        \- ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                       | 26    
+506   |       - VelocityParallel                                                                                                                          | 27-29 
+511   |        \- ParallelDraw (Index: 0, Num: 1)                                                                                                         | 27-29 
+512   |          \- /Game/FPWeapon/Materials/M_FPGun.M_FPGun SK_FPGun (1 instances)                                                                       |       
+538   |            \- DrawIndexed(2994)                                                                                                                   | 27    
+540   |           - /Game/SnowBall/M_edge.M_edge Sphere (12 instances)                                                                                    |       
+558   |            \- DrawIndexedInstanced(2880, 12)                                                                                                      | 28    
+567   |     - HZB                                                                                                                                         | 29-70 
+568   |      \- BeginOcclusionTests                                                                                                                       | 29-70 
+569   |        \- BeginOcclusionTests                                                                                                                     | 29-70 
+573   |          \- BeginOcclusionTests                                                                                                                   | 29-70 
+574   |            \- ViewOcclusionTests 0                                                                                                                | 29-70 
+584   |              \- ShadowFrustumQueries                                                                                                              |       
+586   |               - GroupedQueries                                                                                                                    | 29-30 
+590   |                \- DrawIndexed(36)                                                                                                                 | 29    
+594   |               - IndividualQueries                                                                                                                 | 30-70 
+596   |                \- DrawIndexed(36)                                                                                                                 | 30    
+600   |                 - DrawIndexed(36)                                                                                                                 | 31    
+604   |                 - DrawIndexed(36)                                                                                                                 | 32    
+608   |                 - DrawIndexed(36)                                                                                                                 | 33    
+612   |                 - DrawIndexed(36)                                                                                                                 | 34    
+616   |                 - DrawIndexed(36)                                                                                                                 | 35    
+620   |                 - DrawIndexed(36)                                                                                                                 | 36    
+624   |                 - DrawIndexed(36)                                                                                                                 | 37    
+628   |                 - DrawIndexed(36)                                                                                                                 | 38    
+632   |                 - DrawIndexed(36)                                                                                                                 | 39    
+636   |                 - DrawIndexed(36)                                                                                                                 | 40    
+640   |                 - DrawIndexed(36)                                                                                                                 | 41    
+644   |                 - DrawIndexed(36)                                                                                                                 | 42    
+648   |                 - DrawIndexed(36)                                                                                                                 | 43    
+652   |                 - DrawIndexed(36)                                                                                                                 | 44    
+656   |                 - DrawIndexed(36)                                                                                                                 | 45    
+660   |                 - DrawIndexed(36)                                                                                                                 | 46    
+664   |                 - DrawIndexed(36)                                                                                                                 | 47    
+668   |                 - DrawIndexed(36)                                                                                                                 | 48    
+672   |                 - DrawIndexed(36)                                                                                                                 | 49    
+676   |                 - DrawIndexed(36)                                                                                                                 | 50    
+680   |                 - DrawIndexed(36)                                                                                                                 | 51    
+684   |                 - DrawIndexed(36)                                                                                                                 | 52    
+688   |                 - DrawIndexed(36)                                                                                                                 | 53    
+692   |                 - DrawIndexed(36)                                                                                                                 | 54    
+696   |                 - DrawIndexed(36)                                                                                                                 | 55    
+700   |                 - DrawIndexed(36)                                                                                                                 | 56    
+704   |                 - DrawIndexed(36)                                                                                                                 | 57    
+708   |                 - DrawIndexed(36)                                                                                                                 | 58    
+712   |                 - DrawIndexed(36)                                                                                                                 | 59    
+716   |                 - DrawIndexed(36)                                                                                                                 | 60    
+720   |                 - DrawIndexed(36)                                                                                                                 | 61    
+724   |                 - DrawIndexed(36)                                                                                                                 | 62    
+728   |                 - DrawIndexed(36)                                                                                                                 | 63    
+732   |                 - DrawIndexed(36)                                                                                                                 | 64    
+736   |                 - DrawIndexed(36)                                                                                                                 | 65    
+740   |                 - DrawIndexed(36)                                                                                                                 | 66    
+744   |                 - DrawIndexed(36)                                                                                                                 | 67    
+748   |                 - DrawIndexed(36)                                                                                                                 | 68    
+752   |                 - DrawIndexed(36)                                                                                                                 | 69    
+764   |     - HZB                                                                                                                                         | 70-76 
+765   |      \- BuildHZB(ViewId=0)                                                                                                                        | 70-76 
+766   |        \- BuildHZB                                                                                                                                | 70-76 
+767   |          \- ReduceHZB(mips=[0;3] Furthest) 1024x512                                                                                               | 70-71 
+776   |            \- Dispatch(128, 64, 1)                                                                                                                | 70    
+783   |           - ReduceHZB(mips=[4;7] Furthest) 64x32                                                                                                  | 71-72 
+791   |            \- Dispatch(8, 4, 1)                                                                                                                   | 71    
+798   |           - ReduceHZB(mips=[8;9] Furthest) 4x2                                                                                                    | 72-75 
+805   |            \- Dispatch(1, 1, 1)                                                                                                                   | 72    
+811   |             - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                        | 73    
+812   |             - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                        | 74    
+813   |             - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                        | 75    
+818   |     - SortLights                                                                                                                                  | 76-78 
+819   |      \- ComputeLightGrid                                                                                                                          | 76-78 
+820   |        \- CullLights 24x12x32 NumLights 0 NumCaptures 0                                                                                           | 76-78 
+821   |          \- ClearBuffer(NextCulledLightLink Size=4bytes)                                                                                          |       
+823   |           - ClearBuffer(NextCulledLightData Size=4bytes)                                                                                          |       
+825   |           - ClearBuffer(NumCulledLightsGrid Size=147456bytes)                                                                                     |       
+827   |           - LightGridInject LinkedList SingleThread                                                                                               | 76-77 
+841   |            \- Dispatch(6, 3, 8)                                                                                                                   | 76    
+849   |           - LightGridFeedbackStatus                                                                                                               | 77-78 
+856   |            \- Dispatch(1, 1, 1)                                                                                                                   | 77    
+865   |     - LightFunctionAtlasGeneration                                                                                                                |       
+866   |      \- LightFunctionAtlas Generation                                                                                                             |       
+875   |     - SkyAtmosphereLUTs                                                                                                                           | 78-85 
+876   |      \- TransmittanceLut                                                                                                                          | 78-79 
+881   |        \- Dispatch(32, 8, 1)                                                                                                                      | 78    
+885   |       - MultiScatteringLut                                                                                                                        | 79-80 
+890   |        \- Dispatch(4, 4, 1)                                                                                                                       | 79    
+894   |       - DistantSkyLightLut                                                                                                                        | 80-81 
+905   |        \- Dispatch(1, 1, 1)                                                                                                                       | 80    
+910   |       - RealTimeCaptureSkyViewLut                                                                                                                 | 81-82 
+914   |        \- Dispatch(24, 13, 1)                                                                                                                     | 81    
+918   |       - RealTimeCaptureCamera360VolumeLut                                                                                                         | 82-83 
+926   |        \- Dispatch(8, 8, 4)                                                                                                                       | 82    
+930   |       - SkyViewLut                                                                                                                                | 83-84 
+950   |        \- Dispatch(24, 13, 1)                                                                                                                     | 83    
+954   |       - CameraVolumeLut                                                                                                                           | 84-85 
+958   |        \- Dispatch(8, 8, 4)                                                                                                                       | 84    
+965   |     - CaptureConvolveSkyEnvMap                                                                                                                    | 85-86 
+966   |      \- DiffuseIrradiance                                                                                                                         | 85-86 
+967   |        \- AccessModePass[Graphics] (Textures: 5, Buffers: 3)                                                                                      |       
+969   |         - ComputeSkyEnvMapDiffuseIrradianceCS                                                                                                     | 85-86 
+975   |          \- Dispatch(1, 1, 1)                                                                                                                     | 85    
+982   |     - AccessModePass[Graphics] (Textures: 1, Buffers: 1)                                                                                          |       
+984   |     - GBufferClear                                                                                                                                | 86-92 
+988   |      \- ClearRenderTargetView({ 0.00, 0.00, 0.00, 1.00 })                                                                                         | 86    
+989   |       - ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                         | 87    
+990   |       - ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                         | 88    
+991   |       - ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                         | 89    
+992   |       - ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                         | 90    
+993   |       - ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                         | 91    
+997   |     - SkyAtmosphereEditor                                                                                                                         | 92-93 
+998   |      \- SkyAtmosphereEditor                                                                                                                       | 92-93 
+1012  |        \- DrawIndexed(3)                                                                                                                          | 92    
+1018  |     - BasePass                                                                                                                                    | 93-103
+1019  |      \- BasePassParallel                                                                                                                          | 93-101
+1025  |        \- ParallelDraw (Index: 0, Num: 1)                                                                                                         | 93-101
+1026  |          \- /Game/SnowBall/M_edge.M_edge Sphere (12 instances)                                                                                    |       
+1049  |            \- DrawIndexedInstanced(2880, 12)                                                                                                      | 93    
+1051  |           - /Game/FPWeapon/Materials/M_FPGun.M_FPGun SK_FPGun (1 instances)                                                                       |       
+1073  |            \- DrawIndexed(2994)                                                                                                                   | 94    
+1075  |           - /Game/SnowBall/M_Snow.M_Snow Sphere (12 instances)                                                                                    |       
+1094  |            \- DrawIndexedInstanced(2880, 12)                                                                                                      | 95    
+1096  |           - MI_PrototypeGrid_Gray SM_Cube (2 instances)                                                                                           |       
+1117  |            \- DrawIndexedInstanced(36, 2)                                                                                                         | 96    
+1119  |           - /Game/SnowField/M_InteractiveSnow.M_InteractiveSnow VirtualHeightfieldMesh (1 instances)                                              |       
+1147  |            \- DrawIndexedInstancedIndirect(<393216, 23>)                                                                                          | 97    
+1149  |           - MI_PrototypeGrid_TopDark SM_QuarterCylinder (2 instances)                                                                             |       
+1178  |            \- DrawIndexedInstanced(108, 2)                                                                                                        | 98    
+1180  |           - MI_PrototypeGrid_TopDark SM_Cube (4 instances)                                                                                        |       
+1188  |            \- DrawIndexedInstanced(36, 4)                                                                                                         | 99    
+1190  |           - MI_PrototypeGrid_TopDark SM_Ramp (3 instances)                                                                                        |       
+1198  |            \- DrawIndexedInstanced(24, 3)                                                                                                         | 100   
+1203  |       - EditorPrimitives                                                                                                                          |       
+1204  |        \- SDPG_World                                                                                                                              |       
+1213  |       - SkyPassParallel                                                                                                                           | 101-102
+1219  |        \- ParallelDraw (Index: 0, Num: 1)                                                                                                         | 101-102
+1220  |          \- /Engine/EngineSky/M_SimpleSkyDome.M_SimpleSkyDome SM_SkySphere (1 instances)                                                          |       
+1237  |            \- DrawIndexed(11904)                                                                                                                  | 101   
+1244  |         - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                            | 102   
+1247  |     - ShadowDepths                                                                                                                                | 103-129
+1248  |      \- BuildRenderingCommandsDeferred(Culling=On)                                                                                                | 103-105
+1249  |        \- ClearBuffer(InstanceCulling.Compaction.BlockInstanceCounts Size=4bytes)                                                                 |       
+1251  |         - ClearIndirectArgInstanceCount                                                                                                           | 103-104
+1255  |          \- Dispatch(1, 1, 1)                                                                                                                     | 103   
+1259  |         - CullInstances(UnCulled). Bin 0                                                                                                          | 104-105
+1281  |          \- Dispatch(5, 1, 1)                                                                                                                     | 104   
+1289  |         - CullInstances(Generic). Bin 1                                                                                                           |       
+1291  |         - Instance Compaction Phase 1                                                                                                             |       
+1293  |         - Instance Compaction Phase 2                                                                                                             |       
+1296  |       - Atlas0 8192x2048                                                                                                                          | 105-129
+1297  |        \- ClearShadowDepth                                                                                                                        | 105-106
+1301  |          \- ClearDepthStencilView(1.00)                                                                                                           | 105   
+1304  |         - FirstPersonMap.DirectionalLight                                                                                                         | 106-129
+1305  |          \- WholeScene split0 2040x2040                                                                                                           | 106-111
+1306  |            \- ShadowDepthPassParallel                                                                                                             | 106-111
+1311  |              \- ParallelDraw (Index: 0, Num: 1)                                                                                                   | 106-111
+1312  |                \- /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial Sphere (4 instances)                                                |       
+1327  |                  \- DrawIndexedInstanced(2880, 4)                                                                                                 | 106   
+1329  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Cube (3 instances)                                               |       
+1334  |                  \- DrawIndexedInstanced(36, 3)                                                                                                   | 107   
+1336  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_QuarterCylinder (1 instances)                                    |       
+1341  |                  \- DrawIndexed(108)                                                                                                              | 108   
+1343  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Ramp (1 instances)                                               |       
+1348  |                  \- DrawIndexed(24)                                                                                                               | 109   
+1350  |                 - /Game/SnowBall/M_edge.M_edge Sphere (4 instances)                                                                               |       
+1364  |                  \- DrawIndexedInstanced(2880, 4)                                                                                                 | 110   
+1370  |           - WholeScene split1 2040x2040                                                                                                           | 111-117
+1371  |            \- ShadowDepthPassParallel                                                                                                             | 111-117
+1377  |              \- ParallelDraw (Index: 0, Num: 1)                                                                                                   | 111-117
+1378  |                \- /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial Sphere (14 instances)                                               |       
+1389  |                  \- DrawIndexedInstanced(2880, 14)                                                                                                | 111   
+1391  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Cube (10 instances)                                              |       
+1396  |                  \- DrawIndexedInstanced(36, 10)                                                                                                  | 112   
+1398  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_QuarterCylinder (4 instances)                                    |       
+1403  |                  \- DrawIndexedInstanced(108, 4)                                                                                                  | 113   
+1405  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Ramp (4 instances)                                               |       
+1410  |                  \- DrawIndexedInstanced(24, 4)                                                                                                   | 114   
+1412  |                 - /Game/FPWeapon/Materials/M_FPGun.M_FPGun SK_FPGun (1 instances)                                                                 |       
+1425  |                  \- DrawIndexed(2994)                                                                                                             | 115   
+1427  |                 - /Game/SnowBall/M_edge.M_edge Sphere (14 instances)                                                                              |       
+1439  |                  \- DrawIndexedInstanced(2880, 14)                                                                                                | 116   
+1445  |           - WholeScene split2 2040x2040                                                                                                           | 117-123
+1446  |            \- ShadowDepthPassParallel                                                                                                             | 117-123
+1452  |              \- ParallelDraw (Index: 0, Num: 1)                                                                                                   | 117-123
+1453  |                \- /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial Sphere (10 instances)                                               |       
+1464  |                  \- DrawIndexedInstanced(2880, 10)                                                                                                | 117   
+1466  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Cube (8 instances)                                               |       
+1471  |                  \- DrawIndexedInstanced(36, 8)                                                                                                   | 118   
+1473  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_QuarterCylinder (1 instances)                                    |       
+1478  |                  \- DrawIndexed(108)                                                                                                              | 119   
+1480  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Ramp (3 instances)                                               |       
+1485  |                  \- DrawIndexedInstanced(24, 3)                                                                                                   | 120   
+1487  |                 - /Game/FPWeapon/Materials/M_FPGun.M_FPGun SK_FPGun (1 instances)                                                                 |       
+1500  |                  \- DrawIndexed(2994)                                                                                                             | 121   
+1502  |                 - /Game/SnowBall/M_edge.M_edge Sphere (10 instances)                                                                              |       
+1514  |                  \- DrawIndexedInstanced(2880, 10)                                                                                                | 122   
+1520  |           - WholeScene split3 2040x2040                                                                                                           | 123-129
+1521  |            \- ShadowDepthPassParallel                                                                                                             | 123-129
+1527  |              \- ParallelDraw (Index: 0, Num: 1)                                                                                                   | 123-129
+1528  |                \- /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial Sphere (14 instances)                                               |       
+1539  |                  \- DrawIndexedInstanced(2880, 14)                                                                                                | 123   
+1541  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Cube (10 instances)                                              |       
+1546  |                  \- DrawIndexedInstanced(36, 10)                                                                                                  | 124   
+1548  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_QuarterCylinder (4 instances)                                    |       
+1553  |                  \- DrawIndexedInstanced(108, 4)                                                                                                  | 125   
+1555  |                 - /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial SM_Ramp (4 instances)                                               |       
+1560  |                  \- DrawIndexedInstanced(24, 4)                                                                                                   | 126   
+1562  |                 - /Game/FPWeapon/Materials/M_FPGun.M_FPGun SK_FPGun (1 instances)                                                                 |       
+1575  |                  \- DrawIndexed(2994)                                                                                                             | 127   
+1577  |                 - /Game/SnowBall/M_edge.M_edge Sphere (14 instances)                                                                              |       
+1589  |                  \- DrawIndexedInstanced(2880, 14)                                                                                                | 128   
+1601  |     - LightCompositionTasks_PreLighting                                                                                                           | 129-132
+1602  |      \- ScreenSpace AO Setup                                                                                                                      | 129-130
+1603  |        \- AccessModePass[Graphics] (Textures: 1, Buffers: 0)                                                                                      |       
+1605  |         - AmbientOcclusionSetup 743x354                                                                                                           | 129-130
+1628  |          \- DrawIndexed(3)                                                                                                                        | 129   
+1634  |       - ScreenSpace AO                                                                                                                            | 130-131
+1635  |        \- AmbientOcclusionPS 743x354 SetupAsInput=1 Upsample=0 ShaderQuality=2                                                                    | 130-131
+1653  |          \- DrawIndexed(3)                                                                                                                        | 130   
+1659  |       - ScreenSpace AO                                                                                                                            | 131-132
+1660  |        \- AmbientOcclusionPS 1486x707 SetupAsInput=0 Upsample=1 ShaderQuality=2                                                                   | 131-132
+1683  |          \- DrawIndexed(3)                                                                                                                        | 131   
+1690  |     - ClearStencil (SceneDepthZ)                                                                                                                  | 132-133
+1695  |      \- ClearDepthStencilView(0)                                                                                                                  | 132   
+1699  |     - RenderDeferredLighting                                                                                                                      | 133-170
+1700  |      \- DiffuseIndirectAndAO                                                                                                                      | 133-134
+1701  |        \- DiffuseIndirectComposite(DiffuseIndirect=Disabled ApplyAOToSceneColor) 1486x707                                                         | 133-134
+1716  |          \- DrawIndexed(3)                                                                                                                        | 133   
+1721  |       - InitTranslucencyLightingVolumeTextures                                                                                                    | 134-135
+1722  |        \- ClearTranslucencyLightingVolumeCompute 64                                                                                               | 134-135
+1728  |          \- Dispatch(16, 16, 16)                                                                                                                  | 134   
+1738  |       - Lights                                                                                                                                    | 135-149
+1739  |        \- DirectLighting                                                                                                                          | 135-149
+1740  |          \- InjectTranslucencyLightingVolume                                                                                                      | 135-143
+1741  |            \- InjectTranslucencyLightingVolume(View=0)                                                                                            | 135-143
+1742  |              \- InjectTranslucencyLightingVolume(VolumeCascade=0,ShadowMap)                                                                       | 135-136
+1768  |                \- DrawInstanced(4, 64)                                                                                                            | 135   
+1771  |               - InjectTranslucencyLightingVolume(VolumeCascade=0,ShadowMap)                                                                       | 136-137
+1780  |                \- DrawInstanced(4, 64)                                                                                                            | 136   
+1783  |               - InjectTranslucencyLightingVolume(VolumeCascade=0,ShadowMap)                                                                       | 137-138
+1792  |                \- DrawInstanced(4, 64)                                                                                                            | 137   
+1795  |               - InjectTranslucencyLightingVolume(VolumeCascade=0,ShadowMap)                                                                       | 138-139
+1804  |                \- DrawInstanced(4, 64)                                                                                                            | 138   
+1807  |               - InjectTranslucencyLightingVolume(VolumeCascade=1,ShadowMap)                                                                       | 139-140
+1816  |                \- DrawInstanced(4, 64)                                                                                                            | 139   
+1819  |               - InjectTranslucencyLightingVolume(VolumeCascade=1,ShadowMap)                                                                       | 140-141
+1828  |                \- DrawInstanced(4, 64)                                                                                                            | 140   
+1831  |               - InjectTranslucencyLightingVolume(VolumeCascade=1,ShadowMap)                                                                       | 141-142
+1840  |                \- DrawInstanced(4, 64)                                                                                                            | 141   
+1843  |               - InjectTranslucencyLightingVolume(VolumeCascade=1,ShadowMap)                                                                       | 142-143
+1852  |                \- DrawInstanced(4, 64)                                                                                                            | 142   
+1857  |           - UnbatchedLights                                                                                                                       | 143-149
+1858  |            \- FirstPersonMap.DirectionalLight                                                                                                     | 143-149
+1859  |              \- ClearRenderTarget(ShadowMaskTexture, slice 0, mip 0) 1488x708 ClearAction                                                         | 143-144
+1863  |                \- ClearRenderTargetView({ 1.00, 1.00, 1.00, 1.00 })                                                                               | 143   
+1867  |               - ShadowProjectionOnOpaque                                                                                                          | 144-148
+1868  |                \- Shadows                                                                                                                         | 144-148
+1869  |                  \- FirstPersonMap.DirectionalLight                                                                                               | 144-148
+1870  |                    \- WholeScene split3                                                                                                           | 144-145
+1891  |                      \- Draw(4)                                                                                                                   | 144   
+1895  |                     - WholeScene split2                                                                                                           | 145-146
+1904  |                      \- Draw(4)                                                                                                                   | 145   
+1908  |                     - WholeScene split1                                                                                                           | 146-147
+1917  |                      \- Draw(4)                                                                                                                   | 146   
+1921  |                     - WholeScene split0                                                                                                           | 147-148
+1930  |                      \- Draw(4)                                                                                                                   | 147   
+1938  |               - Light::StandardDeferred: DirectionalLight                                                                                         | 148-149
+1968  |                \- DrawIndexed(3)                                                                                                                  | 148   
+1977  |       - FilterTranslucentVolume 64x64x64 Cascades:2                                                                                               | 149-151
+1978  |        \- Cascade0                                                                                                                                | 149-150
+1997  |          \- DrawInstanced(4, 64)                                                                                                                  | 149   
+2000  |         - Cascade1                                                                                                                                | 150-151
+2012  |          \- DrawInstanced(4, 64)                                                                                                                  | 150   
+2018  |       - SkyLightDiffuse                                                                                                                           | 151-169
+2019  |        \- DistanceFieldLighting                                                                                                                   | 151-169
+2020  |          \- ComputeNormal                                                                                                                         | 151-153
+2024  |            \- ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                   | 151   
+2041  |             - DrawIndexed(6)                                                                                                                      | 152   
+2044  |           - ClearBuffer(DistanceField.ObjectIndirectArguments Size=20bytes)                                                                       | 153-154
+2049  |            \- Dispatch(256, 1, 1)                                                                                                                 | 153   
+2053  |           - ObjectFrustumCulling                                                                                                                  | 154-155
+2061  |            \- Dispatch(2, 1, 1)                                                                                                                   | 154   
+2066  |           - BuildTileList                                                                                                                         | 155-162
+2067  |            \- BuildTileCones                                                                                                                      | 155-156
+2074  |              \- Dispatch(47, 23, 1)                                                                                                               | 155   
+2078  |               - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                      | 156   
+2080  |             - ClearBuffer(NumCulledTilesArray Size=1024bytes)                                                                                     |       
+2082  |             - ClearBuffer(ObjectTilesIndirectArguments Size=12bytes)                                                                              | 157-158
+2086  |              \- Dispatch(256, 1, 1)                                                                                                               | 157   
+2090  |             - CountTileObjectIntersections                                                                                                        | 158-159
+2115  |              \- DrawIndexedInstancedIndirect(<96, 40>)                                                                                            | 158   
+2118  |             - ComputeStartOffsets                                                                                                                 | 159-160
+2125  |              \- Dispatch(2, 1, 1)                                                                                                                 | 159   
+2130  |               - ClearUnorderedAccessViewUint({ 0, 0, 0, 0 })                                                                                      | 160   
+2132  |             - ClearBuffer(NumCulledTilesArray Size=1024bytes)                                                                                     |       
+2134  |             - CullTilesToObjects                                                                                                                  | 161-162
+2146  |              \- DrawIndexedInstancedIndirect(<96, 40>)                                                                                            | 161   
+2150  |           - ClearBuffer(ScreenGridConeVisibility Size=589248bytes)                                                                                | 162-163
+2154  |            \- Dispatch(2304, 1, 1)                                                                                                                | 162   
+2158  |           - ConeTraceGlobal                                                                                                                       | 163-164
+2168  |            \- Dispatch(24, 11, 1)                                                                                                                 | 163   
+2172  |           - ConeTraceObjects                                                                                                                      | 164-165
+2184  |            \- DispatchIndirect(<586, 1, 1>)                                                                                                       | 164   
+2188  |           - CombineCones                                                                                                                          | 165-166
+2196  |            \- Dispatch(24, 11, 1)                                                                                                                 | 165   
+2200  |           - ClearTextureFloat(DistanceFieldAOHistory) 744x354                                                                                     | 166-167
+2205  |            \- Dispatch(93, 45, 1)                                                                                                                 | 166   
+2209  |           - UpdateHistory                                                                                                                         | 167-168
+2232  |            \- DrawIndexed(6)                                                                                                                      | 167   
+2235  |           - UpdateHistoryStability                                                                                                                | 168-169
+2251  |            \- DrawIndexed(6)                                                                                                                      | 168   
+2258  |       - ReflectionIndirect                                                                                                                        | 169-170
+2259  |        \- ReflectionEnvironment                                                                                                                   | 169-170
+2260  |          \- ReflectionEnvironmentAndSky(1486x707,SubstrateMat=Off)                                                                                | 169-170
+2295  |            \- DrawIndexed(3)                                                                                                                      | 169   
+2303  |     - DownsampleDepth(CheckerMinMax) 1486x707x -> 743x354                                                                                         | 170-171
+2320  |      \- DrawIndexed(3)                                                                                                                            | 170   
+2323  |     - DownsampleDepth(MinAndMaxDepth) 743x354x -> 372x177                                                                                         | 171-172
+2336  |      \- DrawIndexed(3)                                                                                                                            | 171   
+2340  |     - VolumetricCloud                                                                                                                             | 172-173
+2341  |      \- CloudView (CS) 372x177                                                                                                                    | 172-173
+2376  |        \- Dispatch(47, 23, 1)                                                                                                                     | 172   
+2386  |     - VolCloudReconstruction                                                                                                                      | 173-174
+2387  |      \- VolumetricReconstruct                                                                                                                     | 173-174
+2404  |        \- DrawIndexed(3)                                                                                                                          | 173   
+2410  |     - TemporalSuperResolution                                                                                                                     | 174-175
+2411  |      \- TSR MeasureFlickeringLuma 1486x707                                                                                                        | 174-175
+2416  |        \- Dispatch(93, 45, 1)                                                                                                                     | 174   
+2423  |     - SkyAtmosphere                                                                                                                               | 175-176
+2424  |      \- <unnamed pass>                                                                                                                            | 175-176
+2446  |        \- Draw(3)                                                                                                                                 | 175   
+2452  |     - ExponentialHeightFog                                                                                                                        | 176-177
+2453  |      \- Fog                                                                                                                                       | 176-177
+2476  |        \- DrawIndexed(6)                                                                                                                          | 176   
+2482  |     - VolCloudComposeOverScene                                                                                                                    | 177-178
+2483  |      \- VolumetricComposeOverScene                                                                                                                | 177-178
+2502  |        \- DrawIndexed(3)                                                                                                                          | 177   
+2512  |     - PostRenderOpsFX                                                                                                                             |       
+2513  |      \- SetSceneTexturesUniformBuffer                                                                                                             |       
+2515  |       - FXSystemPostRenderOpaque                                                                                                                  |       
+2516  |        \- GPUParticles_PostRenderOpaque                                                                                                           |       
+2519  |       - AsyncGpuTraceHelper::PostRenderOpaque                                                                                                     |       
+2520  |        \- NiagaraUpdateCollisionGroupsMap                                                                                                         |       
+2523  |       - Niagara::PostRenderFinish                                                                                                                 |       
+2525  |       - UnsetSceneTexturesUniformBuffer                                                                                                           |       
+2528  |     - Translucency                                                                                                                                | 178-180
+2529  |      \- RenderTranslucency                                                                                                                        | 178-180
+2530  |        \- Translucency(BeforeDistortion Parallel) 1486x707                                                                                        |       
+2532  |         - TranslucencyElements(BeforeDistortion) 1486x707                                                                                         |       
+2541  |         - ClearRenderTarget(Translucency.AfterDOF.Color, slice 0, mip 0) 1488x708 ClearAction                                                     | 178-179
+2545  |          \- ClearRenderTargetView({ 0.00, 0.00, 0.00, 1.00 })                                                                                     | 178   
+2548  |         - Translucency(AfterDOF Parallel) 1486x707                                                                                                | 179-180
+2553  |          \- ParallelDraw (Index: 0, Num: 1)                                                                                                       | 179-180
+2554  |            \- /Game/SnowField/M_debug.M_debug Plane (1 instances)                                                                                 |       
+2587  |              \- DrawIndexed(6)                                                                                                                    | 179   
+2596  |     - VirtualTextureUpdate                                                                                                                        | 180-181
+2597  |      \- CopySubresourceRegion(Buffer 3462, VirtualTexture_FeedbackBuffer)                                                                         | 180   
+2603  |     - PostProcessing                                                                                                                              | 181-237
+2604  |      \- TemporalSuperResolution(sg.AntiAliasingQuality=3) 1486x707 -> 1910x908                                                                    | 181-188
+2605  |        \- TSR ClearPrevTextures 1486x707                                                                                                          | 181-182
+2609  |          \- Dispatch(93, 45, 1)                                                                                                                   | 181   
+2613  |         - TSR DilateVelocity(#0 MotionBlurDirections=0 ReprojectionField OutputIsMoving) 1486x707                                                 | 182-183
+2624  |          \- Dispatch(186, 89, 1)                                                                                                                  | 182   
+2631  |         - TSR DecimateHistory(#3 ReprojectMoire ReprojectResurrection) 1486x707                                                                   | 183-184
+2648  |          \- Dispatch(186, 89, 1)                                                                                                                  | 183   
+2655  |         - TSR RejectShading(#51 TileSize=26 PaddingCostMultiplier=1.5 WaveSize=0 VALU=32bit FlickeringFramePeriod=1.999984 Resurrection) 1486x707 | 184-185
+2679  |          \- Dispatch(58, 28, 1)                                                                                                                   | 184   
+2689  |         - TSR SpatialAntiAliasing(#2 Quality=2) 1486x707                                                                                          | 185-186
+2696  |          \- Dispatch(186, 89, 1)                                                                                                                  | 185   
+2700  |         - TSR UpdateHistory(#3 Quality=Epic R11G11B10 ReprojectionField SupportLensDistortion) 3820x1816                                          | 186-187
+2718  |          \- Dispatch(478, 227, 1)                                                                                                                 | 186   
+2724  |         - TSR ResolveHistory(#2 WaveSize=0 OutputMip1) 1910x908                                                                                   | 187-188
+2731  |          \- Dispatch(239, 114, 1)                                                                                                                 | 187   
+2738  |       - LocalExposure                                                                                                                             | 188-189
+2739  |        \- FLocalExposure 955x454 (CS)                                                                                                             | 188-189
+2746  |          \- Dispatch(15, 8, 1)                                                                                                                    | 188   
+2751  |       - SceneDownsample                                                                                                                           | 189-193
+2752  |        \- Downsample(Scene(1/4) Quality=High PS) 955x454 -> 478x227                                                                               | 189-190
+2768  |          \- DrawIndexed(3)                                                                                                                        | 189   
+2771  |         - Downsample(Scene(1/8) Quality=High PS) 478x227 -> 239x114                                                                               | 190-191
+2778  |          \- DrawIndexed(3)                                                                                                                        | 190   
+2781  |         - Downsample(Scene(1/16) Quality=High PS) 239x114 -> 120x57                                                                               | 191-192
+2788  |          \- DrawIndexed(3)                                                                                                                        | 191   
+2791  |         - Downsample(Scene(1/32) Quality=High PS) 120x57 -> 60x29                                                                                 | 192-193
+2798  |          \- DrawIndexed(3)                                                                                                                        | 192   
+2802  |       - LocalExposure - Blurred Luminance                                                                                                         | 193-196
+2803  |        \- SetupLogLuminance 60x29                                                                                                                 | 193-194
+2808  |          \- Dispatch(8, 4, 1)                                                                                                                     | 193   
+2812  |         - GaussianBlur.LocalExposureGaussianX 60x29 (PS, Static)                                                                                  | 194-195
+2825  |          \- DrawIndexed(3)                                                                                                                        | 194   
+2828  |         - GaussianBlur.LocalExposureGaussianY 60x29 (PS, Static)                                                                                  | 195-196
+2835  |          \- DrawIndexed(3)                                                                                                                        | 195   
+2839  |       - HistogramEyeAdaptation (CS)                                                                                                               | 196-197
+2844  |        \- Dispatch(1, 1, 1)                                                                                                                       | 196   
+2848  |       - CopyEyeAdaptationToTexture (CS)                                                                                                           | 197-198
+2852  |        \- Dispatch(1, 1, 1)                                                                                                                       | 197   
+2856  |       - EnqueueCopy(EyeAdaptationBuffer)                                                                                                          |       
+2857  |        \- CopySubresourceRegion(Buffer 3409, EyeAdaptationBuffer)                                                                                 | 198   
+2859  |       - BloomSetup 955x454 (PS)                                                                                                                   | 199-200
+2877  |        \- DrawIndexed(3)                                                                                                                          | 199   
+2880  |       - SceneDownsample                                                                                                                           | 200-205
+2881  |        \- Downsample(Scene(1/4) Quality=High PS) 955x454 -> 478x227                                                                               | 200-201
+2891  |          \- DrawIndexed(3)                                                                                                                        | 200   
+2894  |         - Downsample(Scene(1/8) Quality=High PS) 478x227 -> 239x114                                                                               | 201-202
+2901  |          \- DrawIndexed(3)                                                                                                                        | 201   
+2904  |         - Downsample(Scene(1/16) Quality=High PS) 239x114 -> 120x57                                                                               | 202-203
+2911  |          \- DrawIndexed(3)                                                                                                                        | 202   
+2914  |         - Downsample(Scene(1/32) Quality=High PS) 120x57 -> 60x29                                                                                 | 203-204
+2921  |          \- DrawIndexed(3)                                                                                                                        | 203   
+2924  |         - Downsample(Scene(1/64) Quality=High PS) 60x29 -> 30x15                                                                                  | 204-205
+2931  |          \- DrawIndexed(3)                                                                                                                        | 204   
+2935  |       - Bloom                                                                                                                                     | 205-217
+2936  |        \- GaussianBlur.BloomX 30x15 (PS, Static)                                                                                                  | 205-206
+2948  |          \- DrawIndexed(3)                                                                                                                        | 205   
+2951  |         - GaussianBlur.BloomY 30x15 (PS, Static)                                                                                                  | 206-207
+2959  |          \- DrawIndexed(3)                                                                                                                        | 206   
+2962  |         - GaussianBlur.BloomX 60x29 (PS, Static)                                                                                                  | 207-208
+2970  |          \- DrawIndexed(3)                                                                                                                        | 207   
+2973  |         - GaussianBlur.BloomY 60x29 (PS, Static)                                                                                                  | 208-209
+2985  |          \- DrawIndexed(3)                                                                                                                        | 208   
+2988  |         - GaussianBlur.BloomX 120x57 (PS, Static)                                                                                                 | 209-210
+2999  |          \- DrawIndexed(3)                                                                                                                        | 209   
+3002  |         - GaussianBlur.BloomY 120x57 (PS, Static)                                                                                                 | 210-211
+3013  |          \- DrawIndexed(3)                                                                                                                        | 210   
+3016  |         - GaussianBlur.BloomX 239x114 (PS, Static)                                                                                                | 211-212
+3027  |          \- DrawIndexed(3)                                                                                                                        | 211   
+3030  |         - GaussianBlur.BloomY 239x114 (PS, Static)                                                                                                | 212-213
+3041  |          \- DrawIndexed(3)                                                                                                                        | 212   
+3044  |         - GaussianBlur.BloomX 478x227 (PS, Static)                                                                                                | 213-214
+3054  |          \- DrawIndexed(3)                                                                                                                        | 213   
+3057  |         - GaussianBlur.BloomY 478x227 (PS, Static)                                                                                                | 214-215
+3068  |          \- DrawIndexed(3)                                                                                                                        | 214   
+3071  |         - GaussianBlur.BloomX 955x454 (PS, Static)                                                                                                | 215-216
+3083  |          \- DrawIndexed(3)                                                                                                                        | 215   
+3086  |         - GaussianBlur.BloomY 955x454 (PS, Static)                                                                                                | 216-217
+3098  |          \- DrawIndexed(3)                                                                                                                        | 216   
+3102  |       - Tonemap 1910x908 (PS GammaOnly=0)                                                                                                         | 217-219
+3106  |        \- ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                       | 217   
+3131  |         - DrawIndexed(3)                                                                                                                          | 218   
+3135  |       - EditorSelectionOutlines                                                                                                                   | 219-226
+3136  |        \- OutlineDepth 1910x908                                                                                                                   | 219-225
+3137  |          \- EditorSelectionDepth                                                                                                                  | 219-221
+3141  |            \- ClearRenderTargetView({ 0.00, 0.00, 0.00, 0.00 })                                                                                   | 219   
+3142  |             - ClearDepthStencilView(0.00, 0)                                                                                                      | 220   
+3147  |           - DrawOutlineBorder                                                                                                                     | 221-225
+3164  |            \- Draw(4)                                                                                                                             | 221   
+3168  |             - Draw(4)                                                                                                                             | 222   
+3172  |             - Draw(4)                                                                                                                             | 223   
+3176  |             - Draw(4)                                                                                                                             | 224   
+3181  |         - OutlineColor 1910x908                                                                                                                   | 225-226
+3205  |          \- DrawIndexed(3)                                                                                                                        | 225   
+3211  |       - CompositeEditorPrimitives 1910x908 MSAA=4                                                                                                 | 226-237
+3212  |        \- TemporalUpsampleDepth 1486x707 -> 3820x1816                                                                                             | 226-227
+3227  |          \- DrawIndexed(3)                                                                                                                        | 226   
+3230  |         - PopulateDepth 1910x908 MSAA                                                                                                             | 227-229
+3234  |          \- ClearDepthStencilView(0.00, 0)                                                                                                        | 227   
+3242  |           - DrawIndexed(3)                                                                                                                        | 228   
+3245  |         - EditorPrimitives 1910x908 MSAA=4                                                                                                        | 229-236
+3251  |          \- RenderViewEditorPrimitives 1910x908 msaa=4                                                                                            | 229-235
+3254  |            \- MID_LevelGridMaterial2_30 None (1 instances)                                                                                        |       
+3277  |              \- DrawIndexed(600)                                                                                                                  | 229   
+3279  |             - /Engine/EngineMaterials/GizmoMaterial.GizmoMaterial None (1 instances)                                                              |       
+3289  |              \- DrawIndexed(282)                                                                                                                  | 230   
+3291  |             - /Engine/EngineDebugMaterials/LevelColorationUnlitMaterial.LevelColorationUnlitMaterial None (1 instances)                           |       
+3303  |              \- DrawIndexed(48)                                                                                                                   | 231   
+3305  |             - /Engine/EngineDebugMaterials/LevelColorationUnlitMaterial.LevelColorationUnlitMaterial None (1 instances)                           |       
+3312  |              \- DrawIndexed(48)                                                                                                                   | 232   
+3327  |             - Draw(96)                                                                                                                            | 233   
+3338  |             - Draw(6)                                                                                                                             | 234   
+3342  |             - Draw(6)                                                                                                                             | 235   
+3344  |           - RenderViewEditorForegroundPrimitives 1910x908 msaa=4                                                                                  |       
+3348  |         - Composite 1910x908 MSAA=4                                                                                                               | 236-237
+3367  |          \- DrawIndexed(3)                                                                                                                        | 236   
+3370  |         - EditorPrimitives Translucent 1910x908 MSAA=4                                                                                            |       
+3374  |          \- RenderViewEditorForegroundTranslucentPrimitives 1910x908 msaa=4                                                                       |       
+3383  |     - ExtractUniformBuffer                                                                                                                        |       
+3386  |   - EnqueueCopy(GPUMessageManager.MessageBuffer)                                                                                                  |       
+3387  |    \- CopySubresourceRegion(Buffer 2839, GPUMessageManager.MessageBuffer)                                                                         | 237   
+3390  | - FRDGBuilder::Execute                                                                                                                            | 238-244
+3391  |  \- CanvasBatchedElements                                                                                                                         | 238-239
+3407  |    \- Draw(2)                                                                                                                                     | 238   
+3410  |   - CanvasBatchedElements                                                                                                                         | 239-240
+3428  |    \- DrawIndexed(6)                                                                                                                              | 239   
+3431  |   - CanvasBatchedElements                                                                                                                         | 240-241
+3446  |    \- Draw(2)                                                                                                                                     | 240   
+3449  |   - CanvasBatchedElements                                                                                                                         | 241-242
+3467  |    \- DrawIndexed(6)                                                                                                                              | 241   
+3470  |   - CanvasBatchedElements                                                                                                                         | 242-243
+3485  |    \- Draw(2)                                                                                                                                     | 242   
+3488  |   - CanvasBatchedElements                                                                                                                         | 243-244
+3506  |    \- DrawIndexed(6)                                                                                                                              | 243   
+3510  |     - End of Capture                                                                                                                              | 244   
